@@ -1,0 +1,18 @@
+<?php
+
+$host = 'idbp.omega.c-host.hu';
+$db_name = 'databaselexikon';
+$db_username = 'databaselexikon'; 
+$db_password = 'Nemadminjelszo19'; 
+/*$host = 'localhost';
+$db_name = 'lexikon';
+$db_username = 'root'; 
+$db_password = '';*/
+$options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC];     
+try{
+    $db = new PDO("mysql:host=$host;dbname=$db_name; charset=utf8",$db_username,$db_password,$options);
+}catch(PDOException $e)	{
+    echo "hiba: az adatbazis kapcsolodas sikertelen !!!".$e->getMessage();
+    exit;
+}		
+?>
